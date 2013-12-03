@@ -3,11 +3,13 @@ package pl.grzeslowski.project_euler_1;
 public final class ProjectEuler1SimpleImpl implements ProjectEuler1 {
 
     public long findSum(final int maxValue) {
-        if(maxValue <=0) {
-            throw new IllegalArgumentException("Max value must be positive integer!");
+        if (maxValue <= 0) {
+            throw new IllegalArgumentException(
+                    "Max value must be positive integer!");
         }
-        
-        return sumForNumber(maxValue, 3) + sumForNumber(maxValue, 5);
+
+        return sumForNumber(maxValue, 3) + sumForNumber(maxValue, 5)
+                - sumForNumber(maxValue, 15);
     }
 
     private long sumForNumber(final int maxValue, final int number) {
